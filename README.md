@@ -32,6 +32,6 @@ Enjoy !!!
 Licensed under [MIT](https://raw.githubusercontent.com/smikodanic/generator-supermean/master/LICENSE) .
 
 
-[npm-image]: https://badge.fury.io/js/generator-supermen-api.svg
-[npm-url]: https://npmjs.org/package/generator-supermen-api
+[npm-image]: https://badge.fury.io/js/generator-supermean.svg
+[npm-url]: https://npmjs.org/~smikodanic/generator-supermean
 
