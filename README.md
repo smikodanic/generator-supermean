@@ -33,5 +33,5 @@ Licensed under [MIT](https://raw.githubusercontent.com/smikodanic/generator-supe
 
 
 [npm-image]: https://badge.fury.io/js/generator-supermean.svg
-[npm-url]: https://npmjs.org/~smikodanic/generator-supermean
+[npm-url]: https://npmjs.org/package/generator-supermean
 
