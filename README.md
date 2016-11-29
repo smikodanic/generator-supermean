@@ -9,7 +9,7 @@ Visit [www.supermean.org](http://www.supermean.org) to receive more information 
 
 ```bash
 npm install -g yo
-npm install -g generator-supermen
+npm install -g generator-supermean
 ```
 
 ## Installation
