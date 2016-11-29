@@ -16,7 +16,7 @@ module.exports = yeoman.Base.extend({
 
         // Have Yeoman greet the user.
         this.log(yosay(
-            'Welcome to the great ' + chalk.red('generator-smtemplate') + ' generator!'
+            'Welcome to the great ' + chalk.red('generator-supermean') + ' generator!'
         ));
 
         var done = this.async();
