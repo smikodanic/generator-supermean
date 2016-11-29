@@ -1,6 +1,6 @@
 {
   "name": "generator-supermean",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SuperMEAN (MEAN Stack) yeoman generator.",
   "homepage": "http://www.supermean.org",
   "author": {
