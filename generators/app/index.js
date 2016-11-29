@@ -1,6 +1,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var rimraf = require('rimraf');
 
 
 module.exports = yeoman.Base.extend({
@@ -10,7 +11,7 @@ module.exports = yeoman.Base.extend({
     },
 
     // (1) Prompting
-    prompting: function () {
+    prompt_writing: function () {
         'use strict';
 
         // Have Yeoman greet the user.
@@ -46,22 +47,46 @@ module.exports = yeoman.Base.extend({
         'use strict';
         var done = this.async();
 
+        var self = this;
+
         this.remote('smikodanic', this.repo, 'master', function (err, cacheObj) {
             if (err) console.log(chalk.red('ERROR: ', JSON.stringify(err, null, 2)));
 
             if (cacheObj) {
                 //console.log(cacheObj.cachePath); ///home/frob/.cache/yeoman/smikodanic/supermean-api/master
-                cacheObj.directory('.', '.');
+                self.fs.copy(cacheObj.cachePath, '.');
             } else {
                 console.log(chalk.red('ERROR: Repo does not exists or has repo URL.'));
             }
+
+            //delete cached files
+            rimraf(cacheObj.cachePath, function () {
+                console.log(chalk.magenta('Cache dir is deleted.'));
+            });
 
             done();
         });
     },
 
-    // install: function () {
-    //     'use strict';
-    //     this.installDependencies();
-    // }
+
+    prompt_installation: function () {
+        var prompts = [{
+            type: 'confirm',
+            name: 'wantInstall',
+            message: 'Do you want to install packages (npm and bower) ?',
+            default: true
+        }];
+
+        return this.prompt(prompts).then(function (props) {
+          this.props = props;
+        }.bind(this));
+    },
+
+    install: function () {
+        'use strict';
+        // console.log(JSON.stringify(this.props, null, 2)); //{wantInstall: true}
+        if (this.props.wantInstall) {
+            this.installDependencies();
+        }
+    }
 });
