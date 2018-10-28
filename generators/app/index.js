@@ -29,6 +29,9 @@ module.exports = yeoman.Base.extend({
                     name: 'Supermean API',
                     value: 'supermean-api'
                 }, {
+                    name: 'Supermean API Typescript',
+                    value: 'supermean-api-ts'
+                }, {
                     name: 'Supermean SPA (Single Page App)',
                     value: 'supermean-spa'
                 }, {
